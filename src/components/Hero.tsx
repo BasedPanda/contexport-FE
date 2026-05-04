@@ -51,7 +51,7 @@ export function Hero() {
           <a className="button-secondary shrink-0" href="#demo">
             Watch 60-sec demo
           </a>
-          <a className="button-secondary shrink-0" href="https://github.com/AryanSingh1104/contextbridge-poc#readme">
+          <a className="button-secondary shrink-0" href="https://github.com/AryanSingh1104/contexport#readme">
             Read the docs →
           </a>
         </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
           className="mx-auto mt-16 max-w-3xl text-left"
         >
           <TerminalBlock label="contexport · zsh">
-            {`$ contextbridge capture \\
+            {`$ contexport capture \\
     --bundle-id yc-demo \\
     --include-git \\
     --include-qa \\
@@ -74,13 +74,13 @@ export function Hero() {
 ✓ Captured decisions, commands, QA status, evidence
 ✓ Wrote bundle: .ctxb/yc-demo
 
-$ contextbridge serve --bundle .ctxb/yc-demo --port 8765
+$ contexport serve --bundle .ctxb/yc-demo --port 8765
 
 ✓ MCP restore server live at http://127.0.0.1:8765/mcp
 ✓ Ready for another agent to restore`}
           </TerminalBlock>
           <p className="mt-3 text-center font-mono text-xs text-fg-subtle">
-            Contexport alpha currently ships as the <code>contextbridge</code> CLI.
+            Contexport writes local <code>.ctxb</code> bundles and serves compatible MCP restore.
           </p>
         </motion.div>
       </div>

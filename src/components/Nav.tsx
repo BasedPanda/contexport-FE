@@ -2,7 +2,7 @@ import { Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "../lib/cn";
 
-const repoUrl = "https://github.com/AryanSingh1104/contextbridge-poc";
+const repoUrl = "https://github.com/AryanSingh1104/contexport";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);

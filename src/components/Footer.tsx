@@ -1,4 +1,4 @@
-const repoUrl = "https://github.com/AryanSingh1104/contextbridge-poc";
+const repoUrl = "https://github.com/AryanSingh1104/contexport";
 const mailtoHref =
   "mailto:aaravsingh16@gmail.com,aryanansh1104@gmail.com?subject=Contexport%20early%20access";
 
