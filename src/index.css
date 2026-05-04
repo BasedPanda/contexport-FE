@@ -49,14 +49,14 @@ input {
   }
 
   .section-pad {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   @media (min-width: 768px) {
     .section-pad {
-      padding-top: 112px;
-      padding-bottom: 112px;
+      padding-top: 56px;
+      padding-bottom: 56px;
     }
   }
 

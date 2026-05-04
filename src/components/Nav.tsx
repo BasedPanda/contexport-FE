@@ -22,8 +22,9 @@ export function Nav() {
       )}
     >
       <nav className="container-shell flex h-16 items-center justify-between" aria-label="Main navigation">
-        <a href="#top" className="flex items-center" aria-label="Contexport home">
-          <img src="/logo.png" alt="Contexport" className="h-9 w-auto" />
+        <a href="#top" className="flex items-center gap-2 font-mono text-sm font-medium text-fg">
+          <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_18px_var(--accent-glow)]" />
+          contexport
         </a>
       </nav>
     </header>
