@@ -27,7 +27,7 @@ export function Nav() {
       <nav className="container-shell flex h-16 items-center justify-between" aria-label="Main navigation">
         <a href="#top" className="flex items-center gap-2 font-mono text-sm font-medium text-fg">
           <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_18px_var(--accent-glow)]" />
-          carryover
+          contexport
         </a>
 
         <div className="hidden items-center gap-6 md:flex">
@@ -37,7 +37,7 @@ export function Nav() {
           <a
             className="text-fg-muted transition hover:text-fg"
             href={repoUrl}
-            aria-label="Carryover on GitHub"
+            aria-label="Contexport on GitHub"
             target="_blank"
             rel="noreferrer"
           >

@@ -6,7 +6,7 @@ const steps = [
     number: "01",
     label: "SNAPSHOT",
     title: "Capture operational state, not chat.",
-    body: "Carryover records what your session actually did: current task, decisions made, commands run, tests passing or failing, files touched, environment, and the limits of what was captured."
+    body: "Contexport records what your session actually did: current task, decisions made, commands run, tests passing or failing, files touched, environment, and the limits of what was captured."
   },
   {
     number: "02",

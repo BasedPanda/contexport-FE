@@ -40,7 +40,7 @@ export function Bundle() {
           <p className="eyebrow">THE ARTIFACT</p>
           <h2 className="section-heading mt-4">The bundle is the source of truth.</h2>
           <p className="body-copy mt-5">
-            Carryover doesn't compress your session into a prompt. It exports authoritative documents — environment,
+            Contexport doesn't compress your session into a prompt. It exports authoritative documents — environment,
             workspace, session, decisions, evidence — that the destination agent can fetch on demand.
           </p>
         </FadeIn>

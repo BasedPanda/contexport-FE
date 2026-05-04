@@ -11,7 +11,7 @@ export function MCP() {
           <p className="eyebrow">BUILT ON STANDARDS</p>
           <h2 className="section-heading mt-4">Built on Model Context Protocol.</h2>
           <p className="body-copy mx-auto mt-5 max-w-2xl">
-            Carryover speaks MCP, the open standard for connecting agents to tools and context. Anthropic created it.
+            Contexport speaks MCP, the open standard for connecting agents to tools and context. Anthropic created it.
             OpenAI and Google have since adopted it.
           </p>
         </FadeIn>

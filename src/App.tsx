@@ -30,7 +30,7 @@ export default function App() {
               <div className="mx-auto max-w-3xl rounded-xl border border-border bg-bg-elevated p-10 text-center shadow-[0_24px_100px_rgba(0,0,0,0.34)] md:p-16">
                 <h2 className="section-heading">Ready to switch agents without losing your place?</h2>
                 <p className="body-copy mx-auto mt-5 max-w-2xl">
-                  Carryover is in early development. Drop your email and we'll send you setup steps when the open beta ships.
+                  Contexport is in early development. Drop your email and we'll send you setup steps when the open beta ships.
                 </p>
                 <div className="mt-8">
                   <EmailCapture variant="large" />

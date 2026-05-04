@@ -9,7 +9,7 @@ type EmailCaptureProps = {
 
 const endpoint = "https://formspree.io/f/xgodoopj";
 const mailtoHref =
-  "mailto:aaravsingh16@gmail.com,aryanansh1104@gmail.com?subject=Carryover%20early%20access";
+  "mailto:aaravsingh16@gmail.com,aryanansh1104@gmail.com?subject=Contexport%20early%20access";
 
 export function EmailCapture({ variant }: EmailCaptureProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -65,7 +65,7 @@ export function EmailCapture({ variant }: EmailCaptureProps) {
               onSubmit={handleSubmit}
               className={cn(isLarge ? "space-y-3" : "flex flex-col gap-3 sm:flex-row")}
             >
-              <input type="hidden" name="_subject" value="New Carryover early access signup" />
+              <input type="hidden" name="_subject" value="New Contexport early access signup" />
               <label className="sr-only" htmlFor={`email-${variant}`}>
                 Email address
               </label>

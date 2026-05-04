@@ -58,7 +58,7 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto mt-16 max-w-3xl text-left"
         >
-          <TerminalBlock label="carryover · zsh">
+          <TerminalBlock label="contexport · zsh">
             {`$ contextbridge bundle examples/chats/session.md \\
     --name handoff --target chatgpt
 ✓ Wrote bundle: contextbridge-runs/handoff

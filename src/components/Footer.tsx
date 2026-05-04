@@ -1,6 +1,6 @@
 const repoUrl = "https://github.com/AryanSingh1104/contextbridge-poc";
 const mailtoHref =
-  "mailto:aaravsingh16@gmail.com,aryanansh1104@gmail.com?subject=Carryover%20early%20access";
+  "mailto:aaravsingh16@gmail.com,aryanansh1104@gmail.com?subject=Contexport%20early%20access";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <a href="#top" className="flex items-center gap-2 font-mono text-sm font-medium text-fg">
               <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_18px_var(--accent-glow)]" />
-              carryover
+              contexport
             </a>
             <p className="mt-4 max-w-xs text-sm leading-6 text-fg-muted">Portable working memory for AI coding agents.</p>
           </div>
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-6 text-xs text-fg-subtle">
-          <p>© 2026 Carryover.</p>
+          <p>© 2026 Contexport.</p>
         </div>
       </div>
     </footer>
