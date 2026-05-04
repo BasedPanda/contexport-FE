@@ -1,8 +1,5 @@
-import { Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "../lib/cn";
-
-const repoUrl = "https://github.com/AryanSingh1104/contexport";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,23 +27,6 @@ export function Nav() {
           contexport
         </a>
 
-        <div className="hidden items-center gap-6 md:flex">
-          <a className="text-sm text-fg-muted transition hover:text-fg" href={`${repoUrl}#readme`}>
-            Docs
-          </a>
-          <a
-            className="text-fg-muted transition hover:text-fg"
-            href={repoUrl}
-            aria-label="Contexport on GitHub"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github className="h-5 w-5" />
-          </a>
-          <a className="button-primary" href="#early-access">
-            Get early access
-          </a>
-        </div>
       </nav>
     </header>
   );

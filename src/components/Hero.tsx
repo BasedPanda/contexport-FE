@@ -48,12 +48,6 @@ export function Hero() {
           className="mx-auto mt-9 flex max-w-4xl flex-col flex-wrap items-center justify-center gap-4 sm:flex-row sm:gap-6"
         >
           <EmailCapture variant="compact" />
-          <a className="button-secondary shrink-0" href="#demo">
-            Watch 60-sec demo
-          </a>
-          <a className="button-secondary shrink-0" href="https://github.com/AryanSingh1104/contexport#readme">
-            Read the docs →
-          </a>
         </motion.div>
 
         <motion.div

@@ -1,5 +1,4 @@
 import { Bundle } from "./components/Bundle";
-import { Demo } from "./components/Demo";
 import { EmailCapture } from "./components/EmailCapture";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -7,8 +6,6 @@ import { HowItWorks } from "./components/HowItWorks";
 import { MCP } from "./components/MCP";
 import { Nav } from "./components/Nav";
 import { Problem } from "./components/Problem";
-import { Roadmap } from "./components/Roadmap";
-import { UseCases } from "./components/UseCases";
 import { FadeIn } from "./components/ui/FadeIn";
 
 export default function App() {
@@ -18,12 +15,9 @@ export default function App() {
       <main>
         <Hero />
         <Problem />
-        <UseCases />
-        <Demo />
         <HowItWorks />
         <Bundle />
         <MCP />
-        <Roadmap />
         <section id="early-access" className="section-pad relative scroll-mt-20 overflow-hidden">
           <div
             aria-hidden="true"
