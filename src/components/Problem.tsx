@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { GitBranch, MessageSquareOff, RotateCcw } from "lucide-react";
+import { MessageSquareOff, RotateCcw, TriangleAlert } from "lucide-react";
 import { FadeIn } from "./ui/FadeIn";
 
 const spring = { stiffness: 300, damping: 20 };
 
 const problems = [
   {
-    title: "Re-explaining is the default.",
-    body: "Every new session starts from zero. Your task, your stack, your constraints — repeated. The context that took you an hour to build with one agent doesn't carry over.",
+    title: "Every handoff starts from zero.",
+    body: "You paste summaries, screenshots, terminal snippets, and \"here's what happened\" messages. The new agent still misses half the state.",
     icon: MessageSquareOff,
     className: "lg:col-span-2"
   },
   {
-    title: "Wasted retries.",
-    body: "The new agent re-attempts approaches the previous one already ruled out — because the failure history doesn't transfer.",
+    title: "Agents repeat failed work.",
+    body: "The next model retries commands, approaches, and assumptions the previous one already ruled out.",
     icon: RotateCcw,
     className: ""
   },
   {
-    title: "Lost decisions.",
-    body: "Architecture choices, environment quirks, and reviewer feedback evaporate the moment you close a tab.",
-    icon: GitBranch,
+    title: "Missing context becomes hallucination.",
+    body: "When the receiving agent does not know what was exported, it guesses. Tool usage, QA status, and repo state get invented.",
+    icon: TriangleAlert,
     className: ""
   }
 ];
@@ -31,10 +31,11 @@ export function Problem() {
       <div className="container-shell">
         <FadeIn className="max-w-3xl">
           <p className="eyebrow">THE PROBLEM</p>
-          <h2 className="section-heading mt-4">Switching agents costs you everything.</h2>
+          <h2 className="section-heading mt-4">AI work dies inside chats.</h2>
           <p className="body-copy mt-5">
-            Every AI coding session builds context — what you tried, what failed, what was decided, what's authoritative.
-            Today, none of it survives the jump to another tool.
+            AI coding agents can now debug, refactor, plan, and review. But the work they do is trapped inside one
+            session. Move to another agent, and the useful state disappears: what changed, what QA status says, what
+            failed, what to do next, and what not to guess.
           </p>
         </FadeIn>
 

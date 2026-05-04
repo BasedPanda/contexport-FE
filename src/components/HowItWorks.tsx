@@ -4,21 +4,21 @@ import { FadeIn } from "./ui/FadeIn";
 const steps = [
   {
     number: "01",
-    label: "SNAPSHOT",
-    title: "Capture operational state, not chat.",
-    body: "Contexport records what your session actually did: current task, decisions made, commands run, tests passing or failing, files touched, environment, and the limits of what was captured."
+    label: "CAPTURE",
+    title: "Capture working state, not just chat.",
+    body: "Contexport records the current task, repo state, commands, decisions, blockers, tests, tools, environment, and known capture gaps."
   },
   {
     number: "02",
     label: "BUNDLE",
-    title: "Typed, evidence-backed export.",
-    body: "A versioned directory of authoritative documents on disk. Every fact is tagged with provenance and trust level. Not a giant prompt — a real artifact you can inspect and diff."
+    title: "Write a versioned context artifact.",
+    body: "The result is a .ctxb bundle on disk: structured JSON, evidence, provenance, checksums, and restore instructions that can be inspected, diffed, and shared."
   },
   {
     number: "03",
     label: "RESTORE",
-    title: "Read by any MCP-compatible agent.",
-    body: "The destination model fetches typed docs by name, not similarity search. When something wasn't captured, it abstains rather than hallucinating. The restore is read-only, deterministic, and small."
+    title: "Restore in another agent.",
+    body: "The receiving agent fetches context/handoff_context.json first, then drills into detailed docs only when needed. If something was not exported, it abstains instead of guessing."
   }
 ];
 
@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="container-shell">
         <FadeIn className="max-w-3xl">
           <p className="eyebrow">HOW IT WORKS</p>
-          <h2 className="section-heading mt-4">Three steps. One canonical bundle.</h2>
+          <h2 className="section-heading mt-4">Capture. Bundle. Restore.</h2>
         </FadeIn>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">

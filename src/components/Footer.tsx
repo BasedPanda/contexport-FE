@@ -12,7 +12,7 @@ export function Footer() {
               <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_18px_var(--accent-glow)]" />
               contexport
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-fg-muted">Portable working memory for AI coding agents.</p>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-fg-muted">Git for AI context.</p>
           </div>
 
           <div>

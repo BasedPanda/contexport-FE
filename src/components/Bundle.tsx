@@ -5,18 +5,18 @@ import { TerminalBlock } from "./ui/TerminalBlock";
 const bundleFeatures = [
   {
     title: "Trust levels.",
-    body: "Every fact tagged authoritative, derived, or raw. The model knows what to rely on.",
+    body: "Every important fact is labeled by authority: exported state, derived summary, evidence excerpt, or raw source.",
     icon: ShieldCheck
   },
   {
-    title: "Evidence-backed.",
-    body: "Curated source excerpts with stable IDs. Claims trace back to the original.",
-    icon: FileSearch
+    title: "Explicit unknowns.",
+    body: "The bundle records what was not captured: hidden runtime state, missing diffs, or unavailable tool history.",
+    icon: EyeOff
   },
   {
-    title: "Capture gaps.",
-    body: "What wasn't captured is logged. The model abstains instead of guessing.",
-    icon: EyeOff
+    title: "Handoff eval.",
+    body: "eval-handoff checks whether another agent can restore the task, preserve boundaries, and avoid inventing missing state.",
+    icon: FileSearch
   }
 ];
 
@@ -38,10 +38,11 @@ export function Bundle() {
       <div className="container-shell">
         <FadeIn className="max-w-3xl">
           <p className="eyebrow">THE ARTIFACT</p>
-          <h2 className="section-heading mt-4">The bundle is the source of truth.</h2>
+          <h2 className="section-heading mt-4">One handoff object. Detailed docs behind it.</h2>
           <p className="body-copy mt-5">
-            Contexport doesn't compress your session into a prompt. It exports authoritative documents — environment,
-            workspace, session, decisions, evidence — that the destination agent can fetch on demand.
+            The first thing a receiving agent reads is <code>context/handoff_context.json</code>: the canonical snapshot
+            of role, task, next action, repo state, tools, evidence, and unknowns. Detailed docs still exist for audit
+            and drill-down. The raw transcript is not the restore path.
           </p>
         </FadeIn>
 
@@ -55,7 +56,29 @@ export function Bundle() {
                 <File>manifest.json</File>
                 {"\n"}
                 <Tree>├── </Tree>
+                <Dir>context/</Dir>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>handoff_context.json</File>
+                <Tree>      # first restore object</Tree>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>knowledge_objects.json</File>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>working_context.md</File>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>git_state.json</File>
+                {"\n"}
+                <Tree>│   └── </Tree>
+                <File>qa_report.md</File>
+                {"\n"}
+                <Tree>├── </Tree>
                 <Dir>environment/</Dir>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>persona.json</File>
                 {"\n"}
                 <Tree>│   ├── </Tree>
                 <File>agent_environment.json</File>
@@ -64,40 +87,13 @@ export function Bundle() {
                 <File>tools_and_skills.json</File>
                 {"\n"}
                 <Tree>├── </Tree>
-                <Dir>workspace/</Dir>
-                {"\n"}
-                <Tree>│   ├── </Tree>
-                <File>git.json</File>
-                {"\n"}
-                <Tree>│   └── </Tree>
-                <File>changed_files.json</File>
-                {"\n"}
-                <Tree>├── </Tree>
                 <Dir>session/</Dir>
                 {"\n"}
                 <Tree>│   ├── </Tree>
                 <File>task_state.json</File>
                 {"\n"}
-                <Tree>│   ├── </Tree>
-                <File>timeline.jsonl</File>
-                {"\n"}
-                <Tree>│   ├── </Tree>
-                <File>commands.jsonl</File>
-                {"\n"}
-                <Tree>│   ├── </Tree>
-                <File>decisions.jsonl</File>
-                {"\n"}
                 <Tree>│   └── </Tree>
-                <File>failures.jsonl</File>
-                {"\n"}
-                <Tree>├── </Tree>
-                <Dir>context/</Dir>
-                {"\n"}
-                <Tree>│   ├── </Tree>
-                <File>working_context.md</File>
-                {"\n"}
-                <Tree>│   └── </Tree>
-                <File>qa_report.md</File>
+                <File>timeline.json</File>
                 {"\n"}
                 <Tree>├── </Tree>
                 <Dir>evidence/</Dir>
@@ -108,11 +104,23 @@ export function Bundle() {
                 <Tree>│   └── </Tree>
                 <File>capture_gaps.json</File>
                 {"\n"}
-                <Tree>└── </Tree>
-                <Dir>restore/</Dir>
+                <Tree>├── </Tree>
+                <Dir>provenance/</Dir>
                 {"\n"}
-                <Tree>    └── </Tree>
-                <File>restore_brief.json</File>
+                <Tree>│   └── </Tree>
+                <File>package_history.json</File>
+                {"\n"}
+                <Tree>├── </Tree>
+                <Dir>reports/</Dir>
+                {"\n"}
+                <Tree>│   ├── </Tree>
+                <File>handoff_eval.json</File>
+                {"\n"}
+                <Tree>│   └── </Tree>
+                <File>context_versions.jsonl</File>
+                {"\n"}
+                <Tree>└── </Tree>
+                <File>checksums.sha256.json</File>
               </>
             </TerminalBlock>
           </FadeIn>

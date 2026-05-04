@@ -3,24 +3,31 @@ import { FadeIn } from "./ui/FadeIn";
 
 const roadmap = [
   {
-    version: "V1 — SHIPPED",
-    status: "Live",
-    title: "Local CLI handoff.",
-    body: "Transcript packaging, bundle export, target-specific restore prompts. 32 passing tests. Works today across ChatGPT, Claude, Cursor, and Codex.",
+    version: "NOW",
+    status: "Local-first alpha",
+    title: "Capture and restore local AI work.",
+    body: "Capture a coding session, write a .ctxb bundle, restore with target-specific prompts, and inspect the handoff object on disk.",
     tone: "live"
   },
   {
-    version: "V2 — ALPHA",
+    version: "IN PROGRESS",
     status: "In progress",
-    title: "MCP-native bundles.",
-    body: "Typed authoritative documents. Hybrid restore frame. Abstention discipline. Read-only retrieval. Connect from any MCP-compatible client.",
+    title: "MCP-native restore.",
+    body: "Expose bundles through a read-only MCP server. Fetch handoff_context.json, drill into evidence, and restore without dumping raw transcripts.",
     tone: "progress"
   },
   {
-    version: "CB-Bench — COMING",
-    status: "Q3 2026",
-    title: "The benchmark for context portability.",
-    body: "An open benchmark for context completeness, transfer fidelity, delta correctness, and abstention. The scoreboard for the category.",
+    version: "NEXT",
+    status: "CB-Handoff-Eval",
+    title: "Benchmark context portability.",
+    body: "Measure whether another AI can continue the work: context completeness, next-action fidelity, evidence grounding, and correct abstention.",
+    tone: "future"
+  },
+  {
+    version: "FUTURE",
+    status: "Delta refresh",
+    title: "Context versions and delta refresh.",
+    body: "Track what changed between handoffs so receiving agents can update state without reloading the whole session.",
     tone: "future"
   }
 ];
@@ -31,16 +38,17 @@ export function Roadmap() {
       <div className="container-shell">
         <FadeIn className="max-w-3xl">
           <p className="eyebrow">ROADMAP</p>
-          <h2 className="section-heading mt-4">What's shipped, what's next.</h2>
+          <h2 className="section-heading mt-4">From local handoff to a standard for AI context portability.</h2>
         </FadeIn>
 
         <div className="relative mt-12">
           <div className="pointer-events-none absolute inset-x-0 top-1/2 z-0 hidden -translate-y-1/2 lg:block">
-            <span className="absolute left-[16%] right-[16%] top-0 h-px bg-border" />
-            <span className="absolute left-1/3 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_24px_var(--accent-glow)]" />
-            <span className="absolute left-2/3 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_24px_var(--accent-glow)]" />
+            <span className="absolute left-[12%] right-[12%] top-0 h-px bg-border" />
+            <span className="absolute left-1/4 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_24px_var(--accent-glow)]" />
+            <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_24px_var(--accent-glow)]" />
+            <span className="absolute left-3/4 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_24px_var(--accent-glow)]" />
           </div>
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-4">
             {roadmap.map((item, index) => (
               <FadeIn key={item.version} delay={index * 0.08} className="relative z-10">
                 <motion.article
