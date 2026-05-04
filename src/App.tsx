@@ -6,6 +6,7 @@ import { HowItWorks } from "./components/HowItWorks";
 import { MCP } from "./components/MCP";
 import { Nav } from "./components/Nav";
 import { Problem } from "./components/Problem";
+import { UseCases } from "./components/UseCases";
 import { FadeIn } from "./components/ui/FadeIn";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Hero />
         <Problem />
         <HowItWorks />
+        <UseCases />
         <Bundle />
         <MCP />
         <section id="early-access" className="section-pad relative scroll-mt-20 overflow-hidden">
