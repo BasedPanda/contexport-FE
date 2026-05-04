@@ -3,21 +3,33 @@ import { FadeIn } from "./ui/FadeIn";
 
 const useCases = [
   {
+    action: "COMMIT",
     label: "WITHIN SESSIONS",
     title: "Resume a session.",
-    body: "Your chat gets too long. The tab dies. The model loses the thread. Or you want to restart with a cleaner context window. Contexport captures the working state of the session so you can restore the task, decisions, commands, files, QA status, and open questions without rebuilding the context from memory."
+    pain: "Long chats get noisy, tabs die, and context windows reset.",
+    value:
+      "Pull a clean restore point with the task, decisions, commands, files, QA state, open questions, and next action.",
+    terminal: "$ contexport commit session\n✓ restore point ready"
   },
   {
+    action: "PUSH",
     label: "ACROSS AGENTS",
     title: "Switch agents.",
-    body: "Use the right agent for the right job. Research and design in ChatGPT. Implement in Claude Code, Cursor, Codex, or a CLI agent. Contexport lets one agent hand off the working context to another: what the goal is, what was decided, what changed, what failed, what passed, and what the next agent should do."
+    pain: "ChatGPT, Claude Code, Codex, Cursor, and CLI agents each have different strengths, but context gets trapped.",
+    value: "Package the working state from one agent and restore it in another.",
+    terminal: "$ contexport push agent\n✓ context package exported"
   },
   {
+    action: "PULL",
     label: "ACROSS PEOPLE",
     title: "Hand off to teammates.",
-    body: "AI-assisted work still needs human handoffs. A teammate should not have to read an entire chat, inspect terminal history, and ask what happened. Contexport packages the working context into a portable bundle your teammate's agent can restore, inspect, and continue from."
+    pain: "Teammates should not read an entire chat log or reconstruct terminal history.",
+    value: "Send a portable context package their agent can inspect and continue from.",
+    terminal: "$ contexport pull handoff\n✓ next action restored"
   }
 ];
+
+const transfers = ["Task", "Decisions", "Files", "Commands", "QA", "Evidence", "Next action", "Not-exported boundaries"];
 
 export function UseCases() {
   return (
@@ -25,10 +37,10 @@ export function UseCases() {
       <div className="container-shell">
         <FadeIn className="max-w-3xl">
           <p className="eyebrow">USE CASES</p>
-          <h2 className="section-heading mt-4">Use it whenever AI work needs to continue somewhere else.</h2>
+          <h2 className="section-heading mt-4">AI work should survive the handoff.</h2>
           <p className="body-copy mt-5 max-w-[720px]">
-            Contexport is for the moments when the context you built with one agent needs to survive a session reset, a
-            tool switch, or a teammate handoff.
+            Contexport turns an AI work session into a portable context package so another session, tool, or teammate
+            can continue without rebuilding context from memory.
           </p>
         </FadeIn>
 
@@ -41,13 +53,33 @@ export function UseCases() {
                 className="card-shell group relative h-full pl-9 transition duration-200 hover:border-border-strong hover:shadow-card-hover"
               >
                 <span className="absolute bottom-8 left-0 top-8 w-px bg-border-strong transition group-hover:bg-accent" />
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-accent">{useCase.label}</p>
+                <div className="flex items-center justify-between gap-4">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-accent">{useCase.label}</p>
+                  <span className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-fg-subtle">
+                    {useCase.action}
+                  </span>
+                </div>
                 <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-fg">{useCase.title}</h3>
-                <p className="mt-3 leading-7 text-fg-muted">{useCase.body}</p>
+                <p className="mt-3 leading-7 text-fg-muted">{useCase.pain}</p>
+                <p className="mt-3 leading-7 text-fg">{useCase.value}</p>
+                <pre className="mt-6 overflow-x-auto rounded-lg border border-border bg-bg-elevated p-4 font-mono text-xs leading-5 text-fg-muted">
+                  {useCase.terminal}
+                </pre>
               </motion.article>
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.28} className="mt-8">
+          <div className="rounded-xl border border-border bg-surface p-5">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-fg-subtle">What transfers</p>
+            <p className="mt-3 text-sm leading-6 text-fg-muted">{transfers.join(" · ")}</p>
+          </div>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-fg-subtle">
+            Contexport does not pretend to remember everything. It tells the next agent what transferred, what did not,
+            and where to continue.
+          </p>
+        </FadeIn>
       </div>
     </section>
   );
